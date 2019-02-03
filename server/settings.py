@@ -25,7 +25,7 @@ SECRET_KEY = 'ieua(+^)(#-5u57hi150hj50!tr0gn$+254t%u)w*91k*d#c3i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
