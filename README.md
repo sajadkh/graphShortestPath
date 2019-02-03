@@ -1,18 +1,18 @@
-#Emergency Navigation
+# Emergency Navigation
 in the emergency condition we cannot find exit doors of a building such as university.   
 we deploy a system for finding emergency exit.
 
-##APIs list
-###Find Path 
-####method
+## APIs list
+### Find Path 
+#### method
 ```
 GET 
 ```
-####route
+#### route
 ```djangourlpath
 {{serverUrl}}/path/
 ```
-###param
+### param
 ```json
 {
   "source" : "sourceName"
@@ -21,16 +21,16 @@ GET
 
 
 
-###set sensor
-####method
+### set sensor
+#### method
 ```
 PUT
 ```
-####route
+#### route
 ```
 {{serverUrl}}/sensor/{{sensorId}}/
 ```
-###body
+### body
 ```json
 {
   "alarm": "boolean"
