@@ -12,10 +12,31 @@ GET
 ```djangourlpath
 {{serverUrl}}/path/
 ```
-### param
+#### param
 ```json
 {
   "source" : "sourceName"
+}
+```
+#### success output
+```json
+{
+  "path": [
+    "3",
+    "2",
+    "1"
+  ],
+  "fire": "",
+  "status": "success"
+}
+```
+
+#### error output
+```json
+{
+  "message": "I'm so sorry for you, you were a good guy. God bless you!",
+  "error": "PathNotFound",
+  "status": "error"
 }
 ```
 
@@ -30,9 +51,17 @@ PUT
 ```
 {{serverUrl}}/sensor/{{sensorId}}/
 ```
-### body
+#### body
 ```json
 {
   "alarm": "boolean"
+}
+```
+
+#### success output
+```json
+{
+  "id": 4,
+  "alarm": true
 }
 ```
