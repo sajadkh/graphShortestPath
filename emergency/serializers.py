@@ -6,11 +6,9 @@ class SourceSerializer(serializers.Serializer):
     source = serializers.CharField(required=True, allow_blank=False, max_length=100)
 
     def create(self, validated_data):
-        return Source.objects.create(**validated_data)
+        return ''
 
     def update(self, instance, validated_data):
-        instance.source = validated_data.get('source', instance.source)
-        instance.save()
         return instance
 
 
@@ -30,3 +28,9 @@ class PathSerializer(serializers.Serializer):
         instance.distance = validated_data.get('distance', instance.distance)
         instance.save()
         return instance
+
+
+class SensorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Sensor
+        fields = ('id', 'alarm')

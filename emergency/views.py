@@ -6,15 +6,15 @@ from rest_framework.viewsets import ModelViewSet
 from collections import defaultdict
 
 
-class PathView(ModelViewSet):
+class SensorView(ModelViewSet):
     """
-    get transaction list
+    get Sensor list
     """
-    serializer_class = PathSerializer
-    queryset = Path.objects.all()
+    serializer_class = SensorSerializer
+    queryset = Sensor.objects.all()
 
 
-class SourceView(APIView):
+class PathView(APIView):
     """
      get path between two nodes
     """
@@ -23,39 +23,51 @@ class SourceView(APIView):
         nodes = Path.objects.all().filter(graph="eng_uni_ferdowsi")
         fire = self.get_fire()
         graph = Graph()
+        fire_path = ''
         for n in nodes:
             if n.source in fire and n.destination in fire:
+                fire_path = n.source + ',' + n.destination
+                continue
+            elif n.source == n.destination:
                 continue
             graph.add_edge(n.source, n.destination, n.distance)
-        source_req_serializer = SourceSerializer(data=request.data)
+        source_req_serializer = SourceSerializer(data=request.query_params)
         if source_req_serializer.is_valid():
-            # path1 = self.find_path(graph, source_req_serializer.validated_data["source"], 'exit1')
-            # path2 = self.find_path(graph, source_req_serializer.validated_data["source"], 'exit2')
             path1 = self.dijsktra(graph, source_req_serializer.validated_data['source'], '1')
             path2 = self.dijsktra(graph, source_req_serializer.validated_data['source'], '5')
-            if len(path1) == 0 and len(path2) > 0:
-                return Response(path2, status.HTTP_200_OK)
+            data = {}
+            if (path2 == 'Error' and path1 == 'Error') or len(path1) == 0 and len(path2) == 0:
+                data = {
+                    'message': "I'm so sorry for you, you were a good guy. God bless you!",
+                    'error': "PathNotFound",
+                    'status': 'error'
+                }
+                return Response(data, status=status.HTTP_404_NOT_FOUND)
+            elif len(path1) == 0 and len(path2) > 0:
+                data = {
+                    'path': path2,
+                    'fire': fire_path,
+                    'status': 'success'
+                }
             elif len(path2) == 0 and len(path1) > 0:
-                return Response(path1, status.HTTP_200_OK)
-            elif len(path1) == 0 and len(path2) == 0:
-                return Response("error in calculate path", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+                data = {
+                    'path': path1,
+                    'fire': fire_path,
+                    'status': 'success'
+                }
             elif len(path1) <= len(path2):
-                return Response(path1, status=status.HTTP_200_OK)
+                data = {
+                    'path': path1,
+                    'fire': fire_path,
+                    'status': 'success'
+                }
             elif len(path1) > len(path2):
-                return Response(path2, status=status.HTTP_200_OK)
-
-    def find_path(self, graph, start, end, path=[]):
-        path = path + [start]
-        if start == end:
-            return path
-        if start not in graph:
-            return []
-        for node in graph[start]:
-            if node not in path:
-                newpath = self.find_path(graph, node, end, path)
-                if newpath:
-                    return newpath
-        return []
+                data = {
+                    'path': path2,
+                    'fire': fire_path,
+                    'status': 'success'
+                }
+            return Response(data, status=status.HTTP_200_OK)
 
     def dijsktra(self, graph, initial, end):
         # shortest paths is a dict of nodes
@@ -80,7 +92,7 @@ class SourceView(APIView):
 
             next_destinations = {node: shortest_paths[node] for node in shortest_paths if node not in visited}
             if not next_destinations:
-                return "Route Not Possible"
+                return "Error"
             # next node is the destination with the lowest weight
             current_node = min(next_destinations, key=lambda k: next_destinations[k][1])
 
@@ -95,7 +107,13 @@ class SourceView(APIView):
         return path
 
     def get_fire(self):
-        return []
+        fire_paths = Sensor.objects.all().filter(alarm=True)
+        fire_nodes = []
+        if len(fire_paths) != 0:
+            for fire_path in fire_paths:
+                fire_nodes.append(fire_path.path.source)
+                fire_nodes.append(fire_path.path.destination)
+        return fire_nodes
 
 
 class Graph:
