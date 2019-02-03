@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3b90c0b-b511-4a8e-b9ee-8d191f13797d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emergency/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/emergency/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emergency/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/emergency/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emergency/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/emergency/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emergency/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/emergency/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emergency/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/emergency/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +13,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/emergency/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="114">
@@ -26,6 +22,15 @@
                 <element signature="e#0#40#0" expanded="true" />
                 <element signature="e#3962#4628#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -103,13 +108,13 @@
       <list>
         <option value="$PROJECT_DIR$/server/urls.py" />
         <option value="$PROJECT_DIR$/server/settings.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/emergency/admin.py" />
         <option value="$PROJECT_DIR$/emergency/models.py" />
         <option value="$PROJECT_DIR$/emergency/urls.py" />
         <option value="$PROJECT_DIR$/emergency/serializers.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/emergency/views.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -196,23 +201,23 @@
       <workItem from="1548615795067" duration="6400000" />
       <workItem from="1548696088926" duration="8309000" />
       <workItem from="1549020430431" duration="2726000" />
-      <workItem from="1549206334952" duration="7349000" />
+      <workItem from="1549206334952" duration="8110000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24784000" />
+    <option name="totallyTimeSpent" value="25545000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="700" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26136363" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26136363" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924242" visible="true" weight="0.32924694" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.32924694" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39929947" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -221,7 +226,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007576" side_tool="true" weight="0.32984293" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.33099824" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.33099824" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -330,13 +335,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../venv/lib/python3.6/site-packages/rest_framework/routers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -419,6 +417,13 @@
             <element signature="e#0#40#0" expanded="true" />
             <element signature="e#3962#4628#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
         </state>
       </provider>
     </entry>
