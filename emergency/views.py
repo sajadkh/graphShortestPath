@@ -20,13 +20,13 @@ class PathView(APIView):
     """
 
     def get(self, request, format=None):
-        nodes = Path.objects.all().filter(graph="eng_uni_ferdowsi")
+        nodes = Path.objects.all().filter(graph= "ferdowsi_uni_eng")
         fire = self.get_fire()
         graph = Graph()
-        fire_path = ''
+        fire_path = []
         for n in nodes:
             if n.source in fire and n.destination in fire:
-                fire_path = n.source + ',' + n.destination
+                fire_path.append(n.source + ',' + n.destination)
                 continue
             elif n.source == n.destination:
                 continue
