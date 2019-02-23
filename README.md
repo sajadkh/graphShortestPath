@@ -68,6 +68,16 @@ PUT
 
 ## Installation
 ```
+  git clone https://github.com/sajadkh/graphShortestPath.git
+  cd graphShortestPath
+  pip3 install -r requirements.txt
+  python3 manage.py migrate
+  python3 manage.py runserver
+```
+
+
+## Installation
+```
   git clone https://github.com/sajadkh/EmergencyExit.git
   cd EmergencyExit
   cordova platform add android
